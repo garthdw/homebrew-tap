@@ -5,24 +5,42 @@
 class BrewChanges < Formula
   desc "Interactive changelog viewer for outdated Homebrew packages"
   homepage "https://github.com/garthdw/brew-changes"
-  version "0.6.8"
+  version "0.6.9"
   license "MIT"
-  depends_on :macos
 
-  if Hardware::CPU.intel?
-    url "https://github.com/garthdw/brew-changes/releases/download/v0.6.8/brew-changes_0.6.8_darwin_amd64.tar.gz"
-    sha256 "6d2ea2a5229f6756476852da44a81451006526e4d2048b0356a3493ab6320bfe"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/garthdw/brew-changes/releases/download/v0.6.9/brew-changes_0.6.9_darwin_amd64.tar.gz"
+      sha256 "aee6b578841a63a0698d41095b3281a158f2d280e39ae33c6ed0af0816e012db"
 
-    define_method(:install) do
-      bin.install "brew-changes"
+      define_method(:install) do
+        bin.install "brew-changes"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/garthdw/brew-changes/releases/download/v0.6.9/brew-changes_0.6.9_darwin_arm64.tar.gz"
+      sha256 "a71b2bee2b433ceca8460c3cd6a401039a1c19a0d9ac0fb61ba71dabcca6098d"
+
+      define_method(:install) do
+        bin.install "brew-changes"
+      end
     end
   end
-  if Hardware::CPU.arm?
-    url "https://github.com/garthdw/brew-changes/releases/download/v0.6.8/brew-changes_0.6.8_darwin_arm64.tar.gz"
-    sha256 "fb443f9298ebfc39aaa1c86266b6d59cf2f60a866599840016d293891c3f71de"
 
-    define_method(:install) do
-      bin.install "brew-changes"
+  on_linux do
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/garthdw/brew-changes/releases/download/v0.6.9/brew-changes_0.6.9_linux_amd64.tar.gz"
+      sha256 "3bba05599b82a578c12141726138e724077fc9eb1c81ecf606f91fedd759aa7f"
+      define_method(:install) do
+        bin.install "brew-changes"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/garthdw/brew-changes/releases/download/v0.6.9/brew-changes_0.6.9_linux_arm64.tar.gz"
+      sha256 "effdaefa6925119004515492715483fa035b9e5ec9b4404c33d604f7045c439d"
+      define_method(:install) do
+        bin.install "brew-changes"
+      end
     end
   end
 
