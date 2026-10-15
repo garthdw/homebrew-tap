@@ -5,21 +5,21 @@
 class BrewChanges < Formula
   desc "Interactive changelog viewer for outdated Homebrew packages"
   homepage "https://github.com/garthdw/brew-changes"
-  version "0.6.11"
+  version "0.7.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/garthdw/brew-changes/releases/download/v0.6.11/brew-changes_0.6.11_darwin_amd64.tar.gz"
-      sha256 "7b34099a2473c286153d44b5f74519fd1540a2a4f0317a5b0eab0452a373360c"
+      url "https://github.com/garthdw/brew-changes/releases/download/v0.7.0/brew-changes_0.7.0_darwin_amd64.tar.gz"
+      sha256 "48e364061e4d117e5212c0fc449641fc651024df802e8bab622d269711026376"
 
       define_method(:install) do
         bin.install "brew-changes"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/garthdw/brew-changes/releases/download/v0.6.11/brew-changes_0.6.11_darwin_arm64.tar.gz"
-      sha256 "e819a5778dbffcda583858fddfa7ed4c1f4466c0b2db7f1c4b07508f3902b429"
+      url "https://github.com/garthdw/brew-changes/releases/download/v0.7.0/brew-changes_0.7.0_darwin_arm64.tar.gz"
+      sha256 "840e77f5a8d24fbaa389309a9d211e81dd8ae065a90890f22b270c93afba010a"
 
       define_method(:install) do
         bin.install "brew-changes"
@@ -29,15 +29,15 @@ class BrewChanges < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/garthdw/brew-changes/releases/download/v0.6.11/brew-changes_0.6.11_linux_amd64.tar.gz"
-      sha256 "fc9c049b6a7b1e1cb78036d878c466ce1ccce9c5aaabf20ae0550bdafdc1b2cf"
+      url "https://github.com/garthdw/brew-changes/releases/download/v0.7.0/brew-changes_0.7.0_linux_amd64.tar.gz"
+      sha256 "5b667d94b915c5692a767a3982bb16513177c8dd1ba5a13eef14b07f483233f6"
       define_method(:install) do
         bin.install "brew-changes"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/garthdw/brew-changes/releases/download/v0.6.11/brew-changes_0.6.11_linux_arm64.tar.gz"
-      sha256 "4cfa9979e8d79df3d591833a57f895c0bf5e5e30e7db88eb2df4da4e3e286a7e"
+      url "https://github.com/garthdw/brew-changes/releases/download/v0.7.0/brew-changes_0.7.0_linux_arm64.tar.gz"
+      sha256 "d5f56e94c08c36b184051a8179fc97001a0d9decadcf36ddda6a512cf13470da"
       define_method(:install) do
         bin.install "brew-changes"
       end
