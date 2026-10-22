@@ -5,13 +5,13 @@
 class BrewChangesRs < Formula
   desc "Interactive changelog viewer for outdated Homebrew packages"
   homepage "https://github.com/garthdw/brew-changes-rs"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/garthdw/brew-changes-rs/releases/download/v0.1.1/brew-changes_0.1.1_darwin_arm64.tar.gz"
-      sha256 "cbf476773c0b7c9656c57b9f0b2ac1f1b14c5e4fdcfe369d344e6fef5d60496b"
+      url "https://github.com/garthdw/brew-changes-rs/releases/download/v0.1.2/brew-changes_0.1.2_darwin_arm64.tar.gz"
+      sha256 "5a24ea2417fa5dcdd88a01cbcb2c18457f0b6a6ae49d521c43ed6b6aad6dab8a"
 
       define_method(:install) do
         bin.install "brew-changes"
@@ -21,15 +21,15 @@ class BrewChangesRs < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/garthdw/brew-changes-rs/releases/download/v0.1.1/brew-changes_0.1.1_linux_amd64.tar.gz"
-      sha256 "cd9c5460a17c3e1b19eb7d59be2e2f6823473607545b260b3ba84bcee1970227"
+      url "https://github.com/garthdw/brew-changes-rs/releases/download/v0.1.2/brew-changes_0.1.2_linux_amd64.tar.gz"
+      sha256 "3ed06fb44c1baf0b3984dd0575eebfc60636b8522ab9edaf0a89ac35ab0b6dae"
       define_method(:install) do
         bin.install "brew-changes"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/garthdw/brew-changes-rs/releases/download/v0.1.1/brew-changes_0.1.1_linux_arm64.tar.gz"
-      sha256 "e28de06467d07522d7167417e382f956bbd100b643aaccbd4451dfda46d29047"
+      url "https://github.com/garthdw/brew-changes-rs/releases/download/v0.1.2/brew-changes_0.1.2_linux_arm64.tar.gz"
+      sha256 "c866bbc08f9a828ad4f49522d6675011ad130ac6e931c85d1fbead9d04aa3f4e"
       define_method(:install) do
         bin.install "brew-changes"
       end
